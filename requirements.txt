@@ -1,0 +1,24 @@
+Technical Requirements
+
+Data Storage and Handling:
+
+Use appropriate data structures (dictionaries, lists, sets) to store book information
+Implement file I/O for saving/loading the library data (JSON or CSV format)
+Include exception handling for file operations and user input
+Object-Oriented Design
+
+Hint: create a Book and LibraryManager classes with appropriate attributes and methods
+
+User Interface:
+
+Build a command-line interface with a menu system
+Implement proper input validation and error messages
+Use string formatting to display information in a readable format.
+
+Code Organization:
+
+Use virtual environment for your project
+Organize code into modules with appropriate functions and classes
+Create a package structure with proper imports
+Include docstrings and comments for code documentation
+Follow PEP 8 styling guidelines (use linters and formaters)

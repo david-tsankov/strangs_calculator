@@ -1,0 +1,9 @@
+    File Management -> cp, mv, rm, mkdir
+    Navigation -> cd, pwd, ls
+    Text Processing -> cat, grep, sort, head
+    System Monitoring -> top, ps, df
+    Permissions and Ownership -> chmod, chown, chgrp
+    Networking - > ping, wget, curl, ssh, scp, ftp
+    Compression and Archiving - > tar, gzip, gunzip, zip, unzip
+    Package Management - > dnf, yum, apt-get
+    Process Management -> kill, killall, bg, killall, kill

@@ -17,5 +17,3 @@ def matrix_multiplication():
 def transpose():
     pass
 
-def get_elimination_matrix():
-    pass

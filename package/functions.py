@@ -10,8 +10,14 @@ def cross_product():
 def get_lenght():
     pass
 
-def contruct_vector():
-    pass
+def construct_vector():
+    def user_input():
+        vector_name = input("Give a symbol to represent the matrix (e.g. A): ")
+    vector_name=user_input()
+    vector_name=np.array(input("Enter vector by documentations' syntax: "))
+    return vector_name
+    
+
 
 def construct_matrix():
     pass
@@ -45,4 +51,3 @@ def get_eigenvectors():
 
 def get_cayley_hamilton_equation():
     pass
-

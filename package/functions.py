@@ -1,4 +1,5 @@
 #functions 
+import numpy as np
 
 def dot_product():
     pass

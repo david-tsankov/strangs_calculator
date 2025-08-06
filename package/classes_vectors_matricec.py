@@ -17,6 +17,10 @@ class Vector:
     def transpose(self):
         vector_transpose=np.transpose(self.vector)
         return vector_transpose
+    
+    def linear_combination(self, other: "Vector"):
+        linear_comb=np.add(self.vector,other.vector)
+        return linear_comb
 
 
 
@@ -29,7 +33,11 @@ class Matrix():
     
 if __name__=="__main__":
     A = Vector([[4],[0],[3]])
+    B = Vector([[1],[-2],[-3]])
     A.vector_contructor()
+    B.vector_contructor()
     print(A)
+    print(B)
+    print(Vector.linear_combination(A,B))
     print(A.transpose())
     print(A.get_lenght())

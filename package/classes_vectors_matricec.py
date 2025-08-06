@@ -11,12 +11,13 @@ class Vector:
         return f"{self.vector}"
     
     def get_lenght(self):
-        pass
+        norm=np.linalg.norm(self.vector)
+        return norm
     
     def transpose(self):
         pass
 
-    
+
 
 class Matrix(Vector):
     def __init__(self):
@@ -26,6 +27,7 @@ class Matrix(Vector):
         return super().__str__()
     
 if __name__=="__main__":
-    A = Vector([[1],[0],[8]])
+    A = Vector([[4],[0],[3]])
     A.vector_contructor()
     print(A)
+    print(A.get_lenght())

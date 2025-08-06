@@ -23,8 +23,9 @@ class Vector:
         return new_vector
     
     def linear_combination(self,other: "Vector",scalar_self: float=1,scalar_other:float=1):
-        linear_comb=np.add(np.dot(self.vector,scalar_self),np.dot(other.vector,scalar_other))
+        linear_comb=np.add(self.vector*scalar_self,other.vector*scalar_other)
         return linear_comb
+
 
 
 
@@ -42,6 +43,7 @@ if __name__=="__main__":
     B.vector_contructor()
     print(A)
     print(B)
+    print(B.scalar_multiplication(10))
     print(Vector.linear_combination(A,B,1,-4))
     print(A.transpose())
     print(A.get_lenght())

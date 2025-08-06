@@ -31,6 +31,7 @@ class Vector:
         return normalized_vector
     
     def dot_product(self,other: "Vector",self_scalar:float=1,other_scalar:float=1):
+        self.vector=np.transpose(self.vector)
         dot_product=np.dot(self.vector*self_scalar,other.vector*other_scalar)
         return dot_product
 
@@ -57,4 +58,4 @@ if __name__=="__main__":
     print(A.transpose())
     print(A.get_lenght())
     print(B.normalize())
-    Vector.dot_product(A,B)
+    print(Vector.dot_product(A,B))

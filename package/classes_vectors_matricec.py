@@ -21,6 +21,10 @@ class Vector:
     def linear_combination(self, other: "Vector"):
         linear_comb=np.add(self.vector,other.vector)
         return linear_comb
+    
+    def scalar_multiplication(self, scalar: float=1):
+        new_vector=np.dot(self.vector, scalar)
+        return new_vector
 
 
 

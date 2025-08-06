@@ -10,21 +10,21 @@ def cross_product():
 def get_lenght():
     pass
 
-def construct_vector():
-    def user_input():
-        vector_name = input("Give a symbol to represent the vector (e.g. A): ")
-        return vector_name
-    vector_name=user_input()
-    vector_name=np.array(input("Enter vector by documentations' syntax: "))
-    return vector_name
+# def construct_vector():
+#     def user_input():
+#         vector_name = input("Give a symbol to represent the vector (e.g. A): ")
+#         return vector_name
+#     vector_name=user_input()
+#     vector_name=np.array(input("Enter vector by documentations' syntax: "))
+#     return vector_name
 
-def construct_matrix():
-    def user_input():
-        matrix_name = input("Give a symbol to represent the matrix (e.g. A): ")
-        return matrix_name
-    matrix_name=user_input()
-    matrix_name=np.array(input("Enter matrix by documentations' syntax: "))
-    return matrix_name
+# def construct_matrix():
+#     def user_input():
+#         matrix_name = input("Give a symbol to represent the matrix (e.g. A): ")
+#         return matrix_name
+#     matrix_name=user_input()
+#     matrix_name=np.array(input("Enter matrix by documentations' syntax: "))
+#     return matrix_name
 
 def get_inverse():
     pass

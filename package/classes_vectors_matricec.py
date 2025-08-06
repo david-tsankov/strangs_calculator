@@ -15,19 +15,21 @@ class Vector:
         return norm
     
     def transpose(self):
-        pass
+        vector_transpose=np.transpose(self.vector)
+        return vector_transpose
 
 
 
-class Matrix(Vector):
+class Matrix():
     def __init__(self):
-        super().__init__()
+        pass
     
     def __str__(self):
-        return super().__str__()
+        return f""
     
 if __name__=="__main__":
     A = Vector([[4],[0],[3]])
     A.vector_contructor()
     print(A)
+    print(A.transpose())
     print(A.get_lenght())

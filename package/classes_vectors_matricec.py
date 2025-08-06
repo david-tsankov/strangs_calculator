@@ -25,6 +25,10 @@ class Vector:
     def linear_combination(self,other: "Vector",scalar_self: float=1,scalar_other:float=1):
         linear_comb=np.add(self.vector*scalar_self,other.vector*scalar_other)
         return linear_comb
+    
+    def normalize(self):
+        normalized_vector=self.vector/np.linalg.norm(self.vector)
+        return normalized_vector
 
 
 
@@ -47,3 +51,4 @@ if __name__=="__main__":
     print(Vector.linear_combination(A,B,1,-4))
     print(A.transpose())
     print(A.get_lenght())
+    print(B.normalize())

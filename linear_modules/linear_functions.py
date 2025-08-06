@@ -71,4 +71,4 @@ def transpose(matrix: np.array):
 
 
 if __name__ == "__main__":
-    print(construct_matrix())
+    pass

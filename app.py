@@ -1,7 +1,7 @@
 #File to run app and interface
 
-import package.functions
-import package.classes_vectors_matricec
+import linear_modules.linear_functions
+import linear_modules.classes_vectors_matricec
 
 print(f"{"Welcome to Strangs Calculator":^100}")
 print(f"{100*"-"}")

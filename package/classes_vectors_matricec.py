@@ -31,6 +31,7 @@ class Vector:
         return normalized_vector
     
     def dot_product(self,other: "Vector",self_scalar:float=1,other_scalar:float=1):
+        """Input must be two vectors of the same shape, as function takes care of transposition and shape alignment."""
         self.vector=np.transpose(self.vector)
         dot_product=np.dot(self.vector*self_scalar,other.vector*other_scalar)
         return dot_product

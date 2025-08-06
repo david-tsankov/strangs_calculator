@@ -18,13 +18,13 @@ class Vector:
         vector_transpose=np.transpose(self.vector)
         return vector_transpose
     
-    def linear_combination(self, other: "Vector"):
-        linear_comb=np.add(self.vector,other.vector)
-        return linear_comb
-    
     def scalar_multiplication(self, scalar: float=1):
         new_vector=np.dot(self.vector, scalar)
         return new_vector
+    
+    def linear_combination(self,other: "Vector",scalar_self: float=1,scalar_other:float=1):
+        linear_comb=np.add(np.dot(self.vector,scalar_self),np.dot(other.vector,scalar_other))
+        return linear_comb
 
 
 
@@ -42,6 +42,6 @@ if __name__=="__main__":
     B.vector_contructor()
     print(A)
     print(B)
-    print(Vector.linear_combination(A,B))
+    print(Vector.linear_combination(A,B,1,-4))
     print(A.transpose())
     print(A.get_lenght())

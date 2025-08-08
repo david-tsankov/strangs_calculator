@@ -57,6 +57,9 @@ class Matrix():
         for index in range(len(eigen_tupple[0])):
             print(f"Eigenvalue: {eigen_tupple[0][index]}, Eigenvector: {eigen_tupple[1][index]}")
         return f"Eigenvectors are horizontal in this functions output!"
+    
+    def get_cayley_hamilton_equation(self):
+        pass
         
     
 

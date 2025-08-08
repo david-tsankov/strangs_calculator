@@ -1,4 +1,5 @@
 import numpy as np
+import sympy as sp
 import class_matrices as Matrix
 import class_vectors as Vector
 
@@ -12,12 +13,6 @@ import class_vectors as Vector
 #     pass
 
 def get_elimination_matrix():
-    pass
-
-def get_eigenvalues():
-    pass
-
-def get_eigenvectors():
     pass
 
 def get_cayley_hamilton_equation():

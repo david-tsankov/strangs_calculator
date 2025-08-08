@@ -36,10 +36,14 @@ class Matrix():
         else:
             return f"Matrix is not singular (det!=0)"
         
+    def get_rank(self):
+        rank=np.linalg.matrix_rank(self.matrix)
+        return rank
+        
     
 
 if __name__=="__main__":
-    M = Matrix([[4,0,-2],[-1,1,0],[3,0,1]])
+    M = Matrix([[-2,2,0],[-1,1,0],[3,0,1]])
     N = Matrix([[2,3,4],[9,3,-2],[0,3,6]])
     M.matrix_construct()
     N.matrix_construct()
@@ -51,10 +55,12 @@ if __name__=="__main__":
     # print(product2)
 
     # Determinant test
-    A=Matrix([[1,0,0],[0,1,0],[0,0,1]])
-    A.matrix_construct()
-    B=Matrix([[1,0,0],[0,1,0]])
-    B.matrix_construct()
-    print(A.get_geterminant())
-    print(B.get_geterminant())
-    print(M.get_inverse())
+    # A=Matrix([[1,0,0],[0,1,0],[0,0,1]])
+    # A.matrix_construct()
+    # B=Matrix([[1,0,0],[0,1,0]])
+    # B.matrix_construct()
+    # print(A.get_geterminant())
+    # print(B.get_geterminant())
+    # print(M.get_inverse())
+
+    print(M.get_rank())

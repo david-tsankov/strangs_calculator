@@ -1,14 +1,16 @@
 #functions 
 import numpy as np
+import class_matrices as Matrix
+import class_vectors as Vector
 
-def dot_product():
-    pass
+# def dot_product():
+#     pass
 
-def cross_product():
-    pass
+# def cross_product():
+#     pass
 
-def get_lenght():
-    pass
+# def get_lenght():
+#     pass
 
 # def construct_vector():
 #     def user_input():
@@ -26,14 +28,14 @@ def get_lenght():
 #     matrix_name=np.array(input("Enter matrix by documentations' syntax: "))
 #     return matrix_name
 
-def get_inverse():
-    pass
+# def get_inverse():
+#     pass
 
-def get_determinant():
-    pass
+# def get_determinant():
+#     pass
 
-def check_singularity():
-    pass
+# def check_singularity():
+#     pass
 
 def get_column_space():
     pass
@@ -62,12 +64,12 @@ def linear_combination_vectors():
 def solve_system_of_equations():
     pass
 
-def matrix_multiplication():
-    pass
+# def matrix_multiplication():
+#     pass
 
-def transpose(matrix: np.array):
-    np.transpose(matrix)
-    return matrix
+# def transpose(matrix: np.array):
+#     np.transpose(matrix)
+#     return matrix
 
 
 if __name__ == "__main__":

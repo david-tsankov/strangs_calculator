@@ -47,6 +47,7 @@ class Vector:
             return f"Either vectors aren't vertical, or vectors aren't 3D, if you wish to use 2D vectors, append a [0] as a third component on each vector!"
         
         
+        
     
 if __name__=="__main__":
     A = Vector([[4],[0],[3]])

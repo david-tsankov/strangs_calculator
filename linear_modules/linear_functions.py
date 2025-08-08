@@ -61,9 +61,10 @@ def get_cayley_hamilton_equation():
 def linear_combination_vectors():
     pass
 
-def solve_system_of_equations():
-    pass
-
+def solve_system_of_equations(self: "Matrix", other: "Vector"):
+    """Computes exact solution of equations of the sort Ax=b, where A is the first parameter, and b is the second parameter."""
+    x=np.linalg.solve(self.matrix,other.vector)
+    return x
 # def matrix_multiplication():
 #     pass
 
@@ -73,4 +74,11 @@ def solve_system_of_equations():
 
 
 if __name__ == "__main__":
-    pass
+    A=Matrix.Matrix([[1,0,0],[0,1,0],[0,0,1]])
+    Matrix.Matrix.matrix_construct(A)
+    print(A)
+    b=Vector.Vector([[4],[5],[-2]])
+    Vector.Vector.vector_construct(b)
+    print(b)
+    x=solve_system_of_equations(A,b)
+    print(x)

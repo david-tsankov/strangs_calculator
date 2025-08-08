@@ -4,7 +4,7 @@ class Vector:
     def __init__(self,vector):
         self.vector = vector
 
-    def vector_contructor(self):
+    def vector_construct(self):
         self.vector=np.array(self.vector)
 
     def __str__(self):

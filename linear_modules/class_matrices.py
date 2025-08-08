@@ -51,6 +51,12 @@ class Matrix():
             10: "\u00B9\u2070"
         }
         return f"{rank}, or R{superscripts[rank]}"
+    
+    def get_eigenvalues(self):
+        eigen_tupple=np.linalg.eig(self.matrix)
+        for index in range(len(eigen_tupple[0])):
+            print(f"Eigenvalue: {eigen_tupple[0][index]}, Eigenvector: {eigen_tupple[1][index]}")
+        return f"Eigenvectors are horizontal in this functions output!"
         
     
 
@@ -76,3 +82,4 @@ if __name__=="__main__":
     # print(M.get_inverse())
 
     print(M.get_rank())
+    print(M.get_eigenvalues())

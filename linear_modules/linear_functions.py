@@ -5,11 +5,11 @@ import class_vectors as Vector
 # def get_column_space():
 #     pass
 
-def get_basis_for_column_space():
-    pass
+# def get_basis_for_column_space():
+#     pass
 
-def get_nullspace():
-    pass
+# def get_nullspace():
+#     pass
 
 def get_elimination_matrix():
     pass

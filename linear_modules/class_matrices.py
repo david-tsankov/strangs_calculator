@@ -1,8 +1,44 @@
 import numpy as np
+from class_vectors import Vector
 
 class Matrix():
-    def __init__(self):
-        pass
+    def __init__(self, matrix):
+        self.matrix = matrix
+    
+    def matrix_construct(self):
+        self.matrix=np.array(self.matrix)
+        return self.matrix
     
     def __str__(self):
-        return f""
+        return f"{self.matrix}"
+    
+    def matrix_multiplication(self, other: "Matrix"):
+        product=np.matmul(self.matrix, other.matrix)
+        return product
+
+    def get_geterminant(self):
+        if self.matrix.shape[0]==self.matrix.shape[1]:
+            det=np.linalg.det(self.matrix)
+            return det
+        else:
+            return f"Please enter a square matrix!"
+
+if __name__=="__main__":
+    # M = Matrix([[4,0,-2],[-1,1,0],[3,0,1]])
+    # N = Matrix([[2,3,4],[9,3,-2],[0,3,6]])
+    # M.matrix_construct()
+    # N.matrix_construct()
+    # print(M)
+    # print(N)
+    # product=Matrix.matrix_multiplication(N,M)
+    # product2=Matrix.matrix_multiplication(M,N)
+    # print(product)
+    # print(product2)
+
+    # Determinant test
+    A=Matrix([[1,0,0],[0,1,0],[0,0,1]])
+    A.matrix_construct()
+    B=Matrix([[1,0,0],[0,1,0]])
+    B.matrix_construct()
+    print(A.get_geterminant())
+    print(B.get_geterminant())

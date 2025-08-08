@@ -35,6 +35,8 @@ class Matrix():
             return f"Matrix is singular (det=0)"
         else:
             return f"Matrix is not singular (det!=0)"
+        
+    
 
 if __name__=="__main__":
     M = Matrix([[4,0,-2],[-1,1,0],[3,0,1]])

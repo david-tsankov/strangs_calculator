@@ -36,6 +36,18 @@ class Vector:
         dot_product=np.dot(self.vector*self_scalar,other.vector*other_scalar)
         return dot_product
     
+    def cross_product(self, other: "Vector"):
+        """The function takes only vertical vectors with 3 components (3D), """
+        if self.vector.shape[0]==3 and other.vector.shape[0]==3:
+            self.vector=np.transpose(self.vector)
+            other.vector=np.transpose(other.vector)
+            cross_product=np.cross(self.vector,other.vector)
+            return np.transpose(cross_product)
+        else: 
+            return f"Either vectors aren't vertical, or vectors aren't 3D, if you wish to use 2D vectors, append a [0] as a third component on each vector!"
+        
+        
+    
 if __name__=="__main__":
     A = Vector([[4],[0],[3]])
     B = Vector([[1],[-2],[-3]])
@@ -43,10 +55,11 @@ if __name__=="__main__":
     B.vector_contructor()
     print(A)
     print(B)
-    print(B.scalar_multiplication(10))
-    print(Vector.linear_combination(A,B,1,-4))
-    A_trans=A.transpose()
-    print(A.transpose())
-    print(A.get_lenght())
-    print(B.normalize())
-    print(Vector.dot_product(A,B))
+    # print(B.scalar_multiplication(10))
+    # print(Vector.linear_combination(A,B,1,-4))
+    # A_trans=A.transpose()
+    # print(A.transpose())
+    # print(A.get_lenght())
+    # print(B.normalize())
+    # print(Vector.dot_product(A,B))
+    print(Vector.cross_product(A,B))

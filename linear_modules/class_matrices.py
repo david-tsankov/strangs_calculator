@@ -29,6 +29,12 @@ class Matrix():
         else:
             inverse=np.linalg.inv(self.matrix)
             return inverse
+        
+    def check_singularity(self):
+        if np.linalg.det(self.matrix)==0:
+            return f"Matrix is singular (det=0)"
+        else:
+            return f"Matrix is not singular (det!=0)"
 
 if __name__=="__main__":
     M = Matrix([[4,0,-2],[-1,1,0],[3,0,1]])

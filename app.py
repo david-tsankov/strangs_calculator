@@ -1,7 +1,7 @@
 #File to run app and interface
 
 import linear_modules.linear_functions
-import linear_modules.classes_vectors_matrices
+import linear_modules.class_vectors
 
 print(f"{"Welcome to Strangs Calculator":^100}")
 print(f"{100*"-"}")

@@ -35,16 +35,6 @@ class Vector:
         self.vector=np.transpose(self.vector)
         dot_product=np.dot(self.vector*self_scalar,other.vector*other_scalar)
         return dot_product
-
-
-
-
-class Matrix():
-    def __init__(self):
-        pass
-    
-    def __str__(self):
-        return f""
     
 if __name__=="__main__":
     A = Vector([[4],[0],[3]])

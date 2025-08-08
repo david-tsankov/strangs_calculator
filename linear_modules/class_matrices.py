@@ -22,12 +22,19 @@ class Matrix():
             return det
         else:
             return f"Please enter a square matrix!"
+        
+    def get_inverse(self):
+        if np.linalg.det(self.matrix)==0:
+            return f"Matrix is singular, no inverse!"
+        else:
+            inverse=np.linalg.inv(self.matrix)
+            return inverse
 
 if __name__=="__main__":
-    # M = Matrix([[4,0,-2],[-1,1,0],[3,0,1]])
-    # N = Matrix([[2,3,4],[9,3,-2],[0,3,6]])
-    # M.matrix_construct()
-    # N.matrix_construct()
+    M = Matrix([[4,0,-2],[-1,1,0],[3,0,1]])
+    N = Matrix([[2,3,4],[9,3,-2],[0,3,6]])
+    M.matrix_construct()
+    N.matrix_construct()
     # print(M)
     # print(N)
     # product=Matrix.matrix_multiplication(N,M)
@@ -42,3 +49,4 @@ if __name__=="__main__":
     B.matrix_construct()
     print(A.get_geterminant())
     print(B.get_geterminant())
+    print(M.get_inverse())

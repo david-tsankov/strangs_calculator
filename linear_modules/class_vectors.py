@@ -2,18 +2,22 @@ import numpy as np
 
 class Vector:
     vectors={
-
+        
     }
 
-    def __init__(self,vector):
+    def __init__(self,vector, name):
         self.vector = vector
+        self.name = name
 
     def vector_construct(self):
-        Vector.vectors[self]=np.array(self.vector)
         self.vector=np.array(self.vector)
+        Vector.vectors[self.name]=self.vector.tolist()
 
-    def vectors_list(self):
-        print(Vector.vectors)
+    def vectors_list():
+        for name, vector in Vector.vectors.items():
+            print(f"{name}")
+            for component in vector:
+                print(f" {component}")
 
     def __str__(self):
         return f"{self.vector}"
@@ -58,18 +62,8 @@ class Vector:
         
     
 if __name__=="__main__":
-    A = Vector([[4],[0],[3]])
-    B = Vector([[1],[-2],[-3]])
+    A=Vector([[1],[0],[0]],"A")
     A.vector_construct()
+    B=Vector([[2],[-1],[5]],"B")
     B.vector_construct()
-    print(A)
-    print(B)
-    # print(B.scalar_multiplication(10))
-    # print(Vector.linear_combination(A,B,1,-4))
-    # A_trans=A.transpose()
-    # print(A.transpose())
-    # print(A.get_lenght())
-    # print(B.normalize())
-    # print(Vector.dot_product(A,B))
-    print(Vector.cross_product(A,B))
-    A.vectors_list()
+    Vector.vectors_list()

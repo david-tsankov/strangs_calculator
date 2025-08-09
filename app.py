@@ -1,4 +1,6 @@
-import numpy as np
+# TODO: Write function to list all instances of each class, e.g. you create a vector x with components 1,2,3 output: x: [[1],[2],[3]]
+# so people can track what vectors theyve created 
+
 from linear_modules.class_matrices import Matrix
 from linear_modules.class_vectors import Vector
 from linear_modules.matrix_and_vector_functions import solve_system_of_equations
@@ -34,7 +36,7 @@ def operation_input():
         vector=Vector(syntax_editor())
         vector.vector_construct()
         print(vector)
-        
+
     elif operation==2:
         print("Youre constructing a matrix")
     elif operation==3:

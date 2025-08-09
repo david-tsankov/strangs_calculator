@@ -17,7 +17,10 @@ print(f"{"5 ---> Other operations":^50}{"6 ---> Exit":^50}")
 print(f"{100*"-"}")
 print("\n")
 
+
 def operation_input():
+    operation=int(input("Enter operation class: "))
+    
     def syntax_editor_vector():    
         _=numbers
         _=_.split(",")
@@ -41,8 +44,6 @@ def operation_input():
                 index+=1
             numbers.append(row)
         return numbers
-    
-    operation=int(input("Enter operation class: "))
 
     if operation==1:
         vector_name=input("Enter a variable to represent the vector (x,b,v): ")
@@ -63,7 +64,7 @@ def operation_input():
         Matrix.matrix_list()
         operation_input()
     elif operation==3:
-        print("Vector operations")
+        pass
     elif operation==4:
         print("Matrix operations")
     elif operation==5:
@@ -75,10 +76,6 @@ def operation_input():
         operation_input()
     
 operation_input()
-
-
-
-
 
 # Draft for the function using hard coded components
 
@@ -95,7 +92,7 @@ operation_input()
 #     return components
 # print(syntax_editor_vector())
 
-# Drafto for function for input of a matrix
+# Draft for function for input of a matrix
 # matrix_components="1,2,3$4,5,6$7,8,9"
 
 # def syntax_editor_matrix():

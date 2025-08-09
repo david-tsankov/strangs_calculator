@@ -14,16 +14,27 @@ print(f"{100*"-"}")
 print("\n")
 
 def operation_input():
+    def syntax_editor():    
+        _=numbers
+        _=_.split(",")
+        components=[]
+        for component in _:
+            print(type(component))
+            component=int(component)
+            print(type(component))
+            components.append([int(component)])
+
+        return components
+    
     operation=int(input("Enter operation class: "))
+
     if operation==1:
         vector=input("Enter a variable to represent the vector (x,b,v): ")
-        components=input("Enter the vector components, separated by a coma: ")
-        vector=Vector(components)
+        numbers=input("Enter the vector components, separated by a coma: ")
+        vector=Vector(syntax_editor())
         vector.vector_construct()
         print(vector)
-        A=Vector([[1],[0],[0]])
-        A.vector_construct()
-        print(A)
+        
     elif operation==2:
         print("Youre constructing a matrix")
     elif operation==3:
@@ -42,4 +53,17 @@ operation_input()
 
 
 
+# Draft for the function using hard coded components
 
+def syntax_editor():    
+    _=numbers
+    _=_.split(",")
+    components=[]
+    for component in _:
+        print(type(component))
+        component=int(component)
+        print(type(component))
+        components.append([int(component)])
+
+    return components
+# print(syntax_editor())

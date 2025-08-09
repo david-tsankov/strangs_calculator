@@ -1,11 +1,19 @@
 import numpy as np
 
 class Vector:
+    vectors={
+
+    }
+
     def __init__(self,vector):
         self.vector = vector
 
     def vector_construct(self):
+        Vector.vectors[self]=np.array(self.vector)
         self.vector=np.array(self.vector)
+
+    def vectors_list(self):
+        print(Vector.vectors)
 
     def __str__(self):
         return f"{self.vector}"
@@ -52,8 +60,8 @@ class Vector:
 if __name__=="__main__":
     A = Vector([[4],[0],[3]])
     B = Vector([[1],[-2],[-3]])
-    A.vector_contructor()
-    B.vector_contructor()
+    A.vector_construct()
+    B.vector_construct()
     print(A)
     print(B)
     # print(B.scalar_multiplication(10))
@@ -64,3 +72,4 @@ if __name__=="__main__":
     # print(B.normalize())
     # print(Vector.dot_product(A,B))
     print(Vector.cross_product(A,B))
+    A.vectors_list()

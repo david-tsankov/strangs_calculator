@@ -36,6 +36,7 @@ def operation_input():
         vector=Vector(syntax_editor())
         vector.vector_construct()
         print(vector)
+        Vector.vectors_list()
 
     elif operation==2:
         print("Youre constructing a matrix")
@@ -57,15 +58,15 @@ operation_input()
 
 # Draft for the function using hard coded components
 
-def syntax_editor():    
-    _=numbers
-    _=_.split(",")
-    components=[]
-    for component in _:
-        print(type(component))
-        component=int(component)
-        print(type(component))
-        components.append([int(component)])
+# def syntax_editor():    
+#     _=numbers
+#     _=_.split(",")
+#     components=[]
+#     for component in _:
+#         print(type(component))
+#         component=int(component)
+#         print(type(component))
+#         components.append([int(component)])
 
-    return components
+#     return components
 # print(syntax_editor())

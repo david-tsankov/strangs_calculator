@@ -7,13 +7,36 @@ print(f"{"Welcome to Strangs Calculator":^100}")
 print(f"{100*"-"}")
 print(f"{"Keep in mind to perform any operation you must first construct a vector/matrix!":^100}")
 print(f"{100*"-"}")
-print(f"{"Choose what operation you would like to perform:":^100}")
-print(f"{"1 - Construct a vector":<25}{"2 - Construct a matrix":<25}{"3 - Transpose":<25}{"4 - Get lenght":<25}")
+print(f"{"1 ---> Construct a vector":^50}{"2 ---> Construct a matrix":^50}")
+print("\n")
+print(f"{"3 ---> Vector operations":^33.33}{"4 ---> Matrix operations":^33.33}{"5 ---> Other operations":^33.33}")
+print(f"{100*"-"}")
+print("\n")
 
-M=Matrix([[1,0,0],[0,1,0],[0,0,1]])
-b=Vector([[1],[0],[0]])
-M.matrix_construct()
-b.vector_construct()
-x=solve_system_of_equations(M,b)
-print(x)
+def operation_input():
+    operation=int(input("Enter operation class: "))
+    if operation==1:
+        vector=input("Enter a variable to represent the vector (x,b,v): ")
+        components=input("Enter the vector in the form of a list of lists (visit documentation): ")
+        print(vector, components)
+        vector=Vector(components)
+        vector.vector_construct()
+        print(vector)
+        A=Vector([[1],[0],[0]])
+        A.vector_construct()
+        print(A)
+    elif operation==2:
+        print("Youre constructing a matrix")
+    elif operation==3:
+        print("Vector operations")
+    elif operation==4:
+        print("Matrix operations")
+    elif operation==5:
+        print("Other operations")
+    else:
+        print("Please enter a valid entry!")
+        operation_input()
+    
+operation_input()
+
 

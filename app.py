@@ -17,8 +17,7 @@ def operation_input():
     operation=int(input("Enter operation class: "))
     if operation==1:
         vector=input("Enter a variable to represent the vector (x,b,v): ")
-        components=input("Enter the vector in the form of a list of lists (visit documentation): ")
-        print(vector, components)
+        components=input("Enter the vector components, separated by a coma: ")
         vector=Vector(components)
         vector.vector_construct()
         print(vector)
@@ -38,5 +37,9 @@ def operation_input():
         operation_input()
     
 operation_input()
+
+
+
+
 
 

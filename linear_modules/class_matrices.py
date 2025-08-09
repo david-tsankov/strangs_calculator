@@ -1,7 +1,6 @@
 import numpy as np
-from class_vectors import Vector
 
-class Matrix():
+class Matrix:
     def __init__(self, matrix):
         self.matrix = matrix
     
@@ -21,20 +20,20 @@ class Matrix():
             det=np.linalg.det(self.matrix)
             return det
         else:
-            return f"Please enter a square matrix!"
+            return "Please enter a square matrix!"
         
     def get_inverse(self):
         if np.linalg.det(self.matrix)==0:
-            return f"Matrix is singular, no inverse!"
+            return "Matrix is singular, no inverse!"
         else:
             inverse=np.linalg.inv(self.matrix)
             return inverse
         
     def check_singularity(self):
         if np.linalg.det(self.matrix)==0:
-            return f"Matrix is singular (det=0)"
+            return "Matrix is singular (det=0)"
         else:
-            return f"Matrix is not singular (det!=0)"
+            return "Matrix is not singular (det!=0)"
         
     def get_rank(self):
         rank=np.linalg.matrix_rank(self.matrix)
@@ -56,7 +55,7 @@ class Matrix():
         eigen_tupple=np.linalg.eig(self.matrix)
         for index in range(len(eigen_tupple[0])):
             print(f"Eigenvalue: {eigen_tupple[0][index]}, Eigenvector: {eigen_tupple[1][index]}")
-        return f"Eigenvectors are horizontal in this functions output!"
+        return "Eigenvectors are horizontal in this functions output!"
     
     def get_cayley_hamilton_equation(self):
         pass

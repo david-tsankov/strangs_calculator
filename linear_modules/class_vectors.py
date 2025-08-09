@@ -44,7 +44,7 @@ class Vector:
             cross_product=np.cross(self.vector,other.vector)
             return np.transpose(cross_product)
         else: 
-            return f"Either vectors aren't vertical, or vectors aren't 3D, if you wish to use 2D vectors, append a [0] as a third component on each vector!"
+            return "Either vectors aren't vertical, or vectors aren't 3D, if you wish to use 2D vectors, append a [0] as a third component on each vector!"
         
         
         

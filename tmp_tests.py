@@ -1,4 +1,4 @@
-import numpy as np
+
 rank=7
 superscripts = {
     1: "\u00B9",

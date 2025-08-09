@@ -1,6 +1,6 @@
 import numpy as np
-from class_matrices import Matrix
-from class_vectors import Vector
+from .class_matrices import Matrix
+from .class_vectors import Vector
 
 def solve_system_of_equations(self: "Matrix", other: "Vector"):
     """Computes exact solution of equations of the sort Ax=b, where A is the first parameter, and b is the second parameter."""

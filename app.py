@@ -28,6 +28,21 @@ def operation_input():
 
         return components
     
+
+    def syntax_editor_matrix():
+        numbers=[]
+        matrix_components="1,2,3$4,5,6$7,8,9"
+        matrix_components=matrix_components.split("$")
+        print(matrix_components)
+        for row in matrix_components:
+            row=row.split(",")
+            index=0
+            for ij in row:
+                row[index]=int(ij)
+                index+=1
+            numbers.append(row)
+        print(numbers)
+    
     operation=int(input("Enter operation class: "))
 
     if operation==1:

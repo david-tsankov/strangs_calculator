@@ -29,9 +29,8 @@ def operation_input():
         return components
     
 
-    def syntax_editor_matrix():
+    def syntax_editor_matrix(matrix_components):
         numbers=[]
-        matrix_components="1,2,3$4,5,6$7,8,9"
         matrix_components=matrix_components.split("$")
         print(matrix_components)
         for row in matrix_components:
@@ -41,7 +40,7 @@ def operation_input():
                 row[index]=int(ij)
                 index+=1
             numbers.append(row)
-        print(numbers)
+        return numbers
     
     operation=int(input("Enter operation class: "))
 
@@ -56,7 +55,13 @@ def operation_input():
         operation_input()
 
     elif operation==2:
-        print("Youre constructing a matrix")
+        matrix_name=input("Enter a variable to represent the matrix (A,E,M): ")
+        matrix_components=input("Enter the matrix components, separating the rows by a $ and the components of each row by a , e.g.(1,2,3$4,5,6$7,8,9): ")
+        matrix_name=Matrix(syntax_editor_matrix(matrix_components),matrix_name)
+        matrix_name.matrix_construct()
+        print("Succesfully created matrix, matrix list: ")
+        Matrix.matrix_list()
+        operation_input()
     elif operation==3:
         print("Vector operations")
     elif operation==4:
@@ -69,7 +74,7 @@ def operation_input():
         print("Please enter a valid entry!")
         operation_input()
     
-# operation_input()
+operation_input()
 
 
 
@@ -91,21 +96,21 @@ def operation_input():
 # print(syntax_editor_vector())
 
 # Drafto for function for input of a matrix
-matrix_components="1,2,3$4,5,6$7,8,9"
+# matrix_components="1,2,3$4,5,6$7,8,9"
 
-def syntax_editor_matrix():
-    numbers=[]
-    matrix_components="1,2,3$4,5,6$7,8,9"
-    matrix_components=matrix_components.split("$")
-    print(matrix_components)
-    for row in matrix_components:
-        row=row.split(",")
-        index=0
-        for ij in row:
-            row[index]=int(ij)
-            index+=1
-        numbers.append(row)
-    print(numbers)
+# def syntax_editor_matrix():
+#     numbers=[]
+#     matrix_components="1,2,3$4,5,6$7,8,9"
+#     matrix_components=matrix_components.split("$")
+#     print(matrix_components)
+#     for row in matrix_components:
+#         row=row.split(",")
+#         index=0
+#         for ij in row:
+#             row[index]=int(ij)
+#             index+=1
+#         numbers.append(row)
+#     print(numbers)
     
 
-syntax_editor_matrix()
+# syntax_editor_matrix()

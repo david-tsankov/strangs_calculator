@@ -81,9 +81,18 @@ def operation_input():
                 operation_3()
 
             if vector_operation==2:
-                vector_for_lenght=input("Enter the variable representing the vector (x,b,e): ")
+                vector_for_lenght=input("Enter the variable representing the vector (x,b,v): ")
                 vector_object=Vector.vector_objects[vector_for_lenght]
                 print(f"Lenght = {vector_object.get_lenght()}")
+                operation_3()
+
+            if vector_operation==3:
+                vector_for_transpose=input("Enter the variable representing the vector (x,b,v): ")
+                vector_object=Vector.vector_objects[vector_for_transpose]
+                print(f"{vector_object} --> {vector_object.transpose()}")
+                Vector.vector_objects[vector_for_transpose]=vector_object.transpose()
+                print(Vector.vector_objects[vector_for_transpose])
+                operation_3()
         operation_3()
 
 

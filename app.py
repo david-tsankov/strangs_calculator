@@ -1,5 +1,4 @@
-# TODO: Write function to list all instances of each class, e.g. you create a vector x with components 1,2,3 output: x: [[1],[2],[3]]
-# so people can track what vectors theyve created 
+# TODO: Break the big functioin into smaller functions
 
 from linear_modules.class_matrices import Matrix
 from linear_modules.class_vectors import Vector
@@ -57,14 +56,37 @@ def operation_input():
 
     elif operation==2:
         matrix_name=input("Enter a variable to represent the matrix (A,E,M): ")
-        matrix_components=input("Enter the matrix components, separating the rows by a $ and the components of each row by a , e.g.(1,2,3$4,5,6$7,8,9): ")
+        matrix_components=input("Enter the matrix components, separating the rows by a $,\nand the components of each row by a ',' e.g.(1,2,3$4,5,6$7,8,9): ")
         matrix_name=Matrix(syntax_editor_matrix(matrix_components),matrix_name)
         matrix_name.matrix_construct()
         print("Succesfully created matrix, matrix list: ")
         Matrix.matrix_list()
         operation_input()
+
     elif operation==3:
-        pass
+        print(f"{100*"-"}")
+        print(f"{"Vector operations: ":^100}")
+        print(f"{100*"-"}")
+        print(f"{"1 ---> List all vectors":^33.33}{"2 ---> Get lenght":^33.33}{"3 ---> Transpose":^33.33}")
+        print("\n")
+        print(f"{"4 ---> Scalar multiplication":^33.33}{"5 ---> Linear combination":^33.33}{"6 ---> Normalize":^33.33}")
+        print("\n")
+        print(f"{"7 ---> Dot product":^33.33}{"8 ---> Cross product":^33.33}{"9 ---> Back to main menu":^33.33}")
+        print(f"{100*"-"}")
+        def operation_3():
+            vector_operation=int(input("Enter vector operation: "))
+
+            if vector_operation==1:
+                Vector.vectors_list()
+                operation_3()
+
+            if vector_operation==2:
+                vector_for_lenght=input("Enter the variable representing the vector (x,b,e): ")
+                vector_object=Vector.vector_objects[vector_for_lenght]
+                print(f"Lenght = {vector_object.get_lenght()}")
+        operation_3()
+
+
     elif operation==4:
         print("Matrix operations")
     elif operation==5:

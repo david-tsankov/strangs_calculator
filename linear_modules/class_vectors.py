@@ -2,7 +2,10 @@ import numpy as np
 
 class Vector:
     vectors={
-        
+
+    }
+    vector_objects={
+
     }
 
     def __init__(self,vector, name):
@@ -12,6 +15,7 @@ class Vector:
     def vector_construct(self):
         self.vector=np.array(self.vector)
         Vector.vectors[self.name]=self.vector.tolist()
+        Vector.vector_objects[self.name]=self
 
     def vectors_list():
         for name, vector in Vector.vectors.items():
@@ -62,8 +66,9 @@ class Vector:
         
     
 if __name__=="__main__":
-    A=Vector([[1],[0],[0]],"A")
-    A.vector_construct()
+    x=Vector([[1],[0],[0]],"x")
+    x.vector_construct()
     B=Vector([[2],[-1],[5]],"B")
     B.vector_construct()
     Vector.vectors_list()
+    print(Vector.get_lenght(x))

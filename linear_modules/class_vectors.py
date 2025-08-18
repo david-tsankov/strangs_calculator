@@ -60,8 +60,8 @@ class Vector_Manager():
 
     def dot_product(self,other: "Vector_Manager",self_scalar:float=1,other_scalar:float=1):
         """Input must be two vectors of the same shape, as function takes care of transposition and shape alignment."""
-        self.components=np.transpose(self.components)
-        dot_product=np.dot(self.components*self_scalar,other.components*other_scalar)
+        temp_transpose=np.transpose(self.components)
+        dot_product=np.dot(temp_transpose*self_scalar,other.components*other_scalar)
         return dot_product
     
     def cross_product(self, other: "Vector_Manager"):

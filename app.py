@@ -125,9 +125,15 @@ def operation_input():
 
             if vector_operation==7:
                 try:
-                    pass
+                    name1=input("Enter the variable representing the first vector (x,b,v): ")
+                    name2=input("Enter the variable representing the second vector (x,b,v): ")
+                    vector_object1=Vector_Manager.vector_objects[name1]
+                    vector_object2=Vector_Manager.vector_objects[name2]
+                    dot_product=Vector_Manager.dot_product(vector_object1, vector_object2)
+                    print(f"Dot product = {dot_product}")
+                    operation_3()
                 except Exception:
-                    pass
+                    print("Please enter valid variables: ")
 
         operation_3()
 

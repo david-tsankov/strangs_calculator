@@ -4,17 +4,18 @@ from linear_modules.class_matrices import Matrix
 from linear_modules.class_vectors import Vector
 from linear_modules.matrix_and_vector_functions import solve_system_of_equations
 
-print(f"{"Welcome to Strangs Calculator":^100}")
-print(f"{100*"-"}")
-print(f"{"Keep in mind to perform any operation you must first construct a vector/matrix!":^100}")
-print(f"{100*"-"}")
-print(f"{"1 ---> Construct a vector":^50}{"2 ---> Construct a matrix":^50}")
-print("\n")
-print(f"{"3 ---> Vector operations":^50}{"4 ---> Matrix operations":^50}")
-print("\n")
-print(f"{"5 ---> Other operations":^50}{"6 ---> Exit":^50}")
-print(f"{100*"-"}")
-print("\n")
+def main_menu():
+    print(f"{"Welcome to Strangs Calculator":^100}")
+    print(f"{100*"-"}")
+    print(f"{"Keep in mind to perform any operation you must first construct a vector/matrix!":^100}")
+    print(f"{100*"-"}")
+    print(f"{"1 ---> Construct a vector":^50}{"2 ---> Construct a matrix":^50}")
+    print("\n")
+    print(f"{"3 ---> Vector operations":^50}{"4 ---> Matrix operations":^50}")
+    print("\n")
+    print(f"{"5 ---> Other operations":^50}{"6 ---> Exit":^50}")
+    print(f"{100*"-"}")
+    print("\n")
 
 
 def operation_input():

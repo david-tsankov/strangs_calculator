@@ -111,7 +111,23 @@ def operation_input():
                     print(f"Linear combination -->\n {linear_combination}")
                     operation_3()
                 except Exception:
-                    print(Exception)
+                    print("Please enter valid variables/scalars: ")
+
+            if vector_operation==6:
+                try:
+                    name=input("Enter the variable representing the vector (x,b,v): ")
+                    vector_object=Vector_Manager.vector_objects[name]
+                    vector_object=Vector_Manager.normalize(vector_object)
+                    print(f"Normalized vector =\n{vector_object}")
+                    operation_3()
+                except Exception:
+                    print("Please enter a valid variable: ")
+
+            if vector_operation==7:
+                try:
+                    pass
+                except Exception:
+                    pass
 
         operation_3()
 

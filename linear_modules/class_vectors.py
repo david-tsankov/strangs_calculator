@@ -79,8 +79,8 @@ class Vector_Manager(Vector):
     
     def list_vectors():
         for name, object in Vector_Manager.vector_objects.items():
-            print(f"{name} =\n{print(object)}")
-        return
+            print(f"{object}")
+        return ""
         
         
         

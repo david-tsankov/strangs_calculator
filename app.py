@@ -130,10 +130,23 @@ def operation_input():
                     vector_object1=Vector_Manager.vector_objects[name1]
                     vector_object2=Vector_Manager.vector_objects[name2]
                     dot_product=Vector_Manager.dot_product(vector_object1, vector_object2)
-                    print(f"Dot product = {dot_product}")
+                    print(f"{dot_product}")
                     operation_3()
                 except Exception:
                     print("Please enter valid variables: ")
+
+            if vector_operation==8:
+                try:
+                    name1=input("Enter the variable representing the first vector (x,b,v): ")
+                    name2=input("Enter the variable representing the second vector (x,b,v): ")
+                    name_cross=input("Enter a variable representing the cross product: ")
+                    vector_object1=Vector_Manager.vector_objects[name1]
+                    vector_object2=Vector_Manager.vector_objects[name2]
+                    cross_product=Vector_Manager.cross_product(vector_object1, vector_object2, name_cross)
+                    print(f"Cross product = {cross_product}")
+                    operation_3()
+                except Exception:
+                    pass
 
         operation_3()
 

@@ -64,13 +64,15 @@ class Vector_Manager():
         dot_product=np.dot(temp_transpose*self_scalar,other.components*other_scalar)
         return dot_product
     
-    def cross_product(self, other: "Vector_Manager"):
+    def cross_product(self, other: "Vector_Manager",name_cross: str="Cross product"):
         """The function takes only vertical vectors with 3 components (3D), """
         if self.components.shape[0]==3 and other.components.shape[0]==3:
             self.components=np.transpose(self.components)
             other.components=np.transpose(other.components)
-            cross_product=np.cross(self.components,other.components)
-            return np.transpose(cross_product)
+            cross_product=np.transpose(np.cross(self.components,other.components))
+            cross_object=Vector_Manager(cross_product, name_cross)
+            Vector_Manager.object_saver(cross_object)
+            return cross_object
         else: 
             return "Either vectors aren't vertical, or vectors aren't 3D, if you wish to use 2D vectors, append a [0] as a third component on each vector!"
     

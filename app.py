@@ -1,8 +1,8 @@
 # TODO: Break the big functioin into smaller functions
 
 from linear_modules.class_matrices import Matrix
-from linear_modules.class_vectors import Vector, Vector_Manager
-from linear_modules.matrix_and_vector_functions import solve_system_of_equations
+from linear_modules.class_vectors import Vector_Manager
+# from linear_modules.matrix_and_vector_functions import solve_system_of_equations
 
 def main_menu():
     print(f"{"Welcome to Strangs Calculator":^100}")
@@ -44,18 +44,16 @@ def operation_input():
         name=input("Enter a variable to represent the vector (x,b,v): ")
         components=input("Enter the vector components, separated by a coma: ")
         components=syntax_editor_vector(components)
-        vector_object=Vector(components,name)
-        Vector.vector_construct(vector_object)
-        vector_manage_object=Vector_Manager(components,name)
-        Vector_Manager.vector_construct(vector_manage_object)
-        Vector_Manager.object_saver(vector_manage_object)
+        vector_object=Vector_Manager(components,name)
+        Vector_Manager.vector_construct(vector_object)
+        Vector_Manager.object_saver(vector_object)
         print(f"Succesfully created vector: {vector_object}")
         operation_input()
 
     elif operation==2:
         matrix_name=input("Enter a variable to represent the matrix (A,E,M): ")
         matrix_components=input("Enter the matrix components, separating the rows by a $,\nand the components of each row by a ',' e.g.(1,2,3$4,5,6$7,8,9): ")
-        matrix_name=Matrix(syntax_editor_matrix(matrix_components),matrix_name)
+        # matrix_name=Matrix(syntax_editor_matrix(matrix_components),matrix_name)
         matrix_name.matrix_construct()
         print("Succesfully created matrix, matrix list: ")
         Matrix.matrix_list()
@@ -74,17 +72,47 @@ def operation_input():
                 try:
                     name=input("Enter the variable representing the vector (x,b,v): ")
                     vector_object=Vector_Manager.vector_objects[name]
-                    print(f"Lenght = {Vector.get_lenght(vector_object)}")
+                    print(f"Lenght = {Vector_Manager.get_lenght(vector_object)}")
                 except Exception:
-                    print("Please enter a valid name")
+                    print("Please enter a valid variable")
                 operation_3()
 
             if vector_operation==3:
-                name=input("Enter the variable representing the vector (x,b,v): ")
-                vector_object=Vector_Manager.vector_objects[name]
-                vector_object=Vector.transpose(vector_object)
-                print(f"Transposed vector --> {vector_object}")
-                operation_3()
+                try:
+                    name=input("Enter the variable representing the vector (x,b,v): ")
+                    vector_object=Vector_Manager.vector_objects[name]
+                    vector_object=Vector_Manager.transpose(vector_object)
+                    print(f"Transposed vector -->\n {vector_object}")
+                    operation_3()
+                except Exception:
+                    print("Please enter a valid variable")
+
+            if vector_operation==4:
+                try:
+                    name=input("Enter the variable representing the vector (x,b,v): ")
+                    vector_object=Vector_Manager.vector_objects[name]
+                    scalar=float(input("Please enter a scalar multiplier: "))
+                    vector_object=Vector_Manager.scalar_multiplication(vector_object, scalar)
+                    print(f"Scaled vector -->\n {vector_object}")
+                    operation_3()
+                except Exception:
+                    print("Please enter a valid variable")
+
+            if vector_operation==5:
+                try:
+                    name1=input("Enter the variable representing the first vector (x,b,v): ")
+                    scalar1=float(input("Enter the first scalar multiplier: "))
+                    name2=input("Enter the variable representing the second vector (x,b,v): ")
+                    scalar2=float(input("Enter the second scalar multiplier: "))
+                    name_comb=input("Enter a variable(s) to represent the combination: ")
+                    vector_object1=Vector_Manager.vector_objects[name1]
+                    vector_object2=Vector_Manager.vector_objects[name2]
+                    linear_combination=Vector_Manager.linear_combination(vector_object1, vector_object2, scalar1, scalar2, name_comb)
+                    print(f"Linear combination -->\n {linear_combination}")
+                    operation_3()
+                except Exception:
+                    print(Exception)
+
         operation_3()
 
 

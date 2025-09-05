@@ -1,6 +1,6 @@
 import numpy as np
 
-class Matrix:
+class Matrix_Manager:
     matrix_objects={
 
     }
@@ -12,17 +12,17 @@ class Matrix:
         self.components=np.array(self.components)
 
     def matrix_object_saver(self):
-        Matrix.matrix_objects[self.name]=self
+        Matrix_Manager.matrix_objects[self.name]=self
 
     def matrix_list():
-        for name,object in Matrix.matrix_objects.items():
+        for name,object in Matrix_Manager.matrix_objects.items():
             print(f"{object}")
         return ""
     
     def __str__(self):
         return f"{self.name} =\n{self.components}"
     
-    def matrix_multiplication(self, other: "Matrix"):
+    def matrix_multiplication(self, other: "Matrix_Manager"):
         product=np.matmul(self.matrix, other.matrix)
         return product
 
@@ -87,11 +87,11 @@ class Matrix:
     
 
 if __name__=="__main__":
-    M = Matrix([[-2,2,0],[-1,1,0],[3,0,1]],"M")
-    N = Matrix([[2,3,4],[9,3,-2],[0,3,6]],"N")
-    Matrix.matrix_construct(M)
-    Matrix.matrix_object_saver(M)
-    Matrix.matrix_construct(N)
-    Matrix.matrix_object_saver(N)    
-    Matrix.matrix_list()
+    M = Matrix_Manager([[-2,2,0],[-1,1,0],[3,0,1]],"M")
+    N = Matrix_Manager([[2,3,4],[9,3,-2],[0,3,6]],"N")
+    Matrix_Manager.matrix_construct(M)
+    Matrix_Manager.matrix_object_saver(M)
+    Matrix_Manager.matrix_construct(N)
+    Matrix_Manager.matrix_object_saver(N)    
+    Matrix_Manager.matrix_list()
     

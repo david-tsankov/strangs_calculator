@@ -36,17 +36,24 @@ def syntax_editor_vector(components):
     return numpy_array
 
 def operation_input():
-    operation=int(input("Enter operation class: "))
-
-    if operation==1:
-        name=input("Enter a variable to represent the vector (x,b,v): ")
-        components=input("Enter the vector components, separated by a coma: ")
-        components=syntax_editor_vector(components)
-        vector_object=Vector_Manager(components,name)
-        Vector_Manager.vector_construct(vector_object)
-        Vector_Manager.object_saver(vector_object)
-        print(f"Succesfully created vector: {vector_object}")
+    try:
+        operation=int(input("Enter operation class: "))
+    except Exception:
+        print("Please enter a valid operation")
         operation_input()
+    if operation==1:
+        try:
+            name=input("Enter a variable to represent the vector (x,b,v): ")
+            components=input("Enter the vector components, separated by a coma: ")
+            components=syntax_editor_vector(components)
+            vector_object=Vector_Manager(components,name)
+            Vector_Manager.vector_construct(vector_object)
+            Vector_Manager.object_saver(vector_object)
+            print(f"Succesfully created vector: {vector_object}")
+            operation_input()
+        except Exception:
+            print("Please enter a valid operation: ")
+            operation_input()
 
     elif operation==2:
         matrix_name=input("Enter a variable to represent the matrix (A,E,M): ")

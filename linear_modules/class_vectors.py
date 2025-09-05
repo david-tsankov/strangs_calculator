@@ -22,7 +22,7 @@ class Vector_Manager():
         if self.components.shape[0]==3 and other.components.shape[0]==3:
             self_temp_transpose=np.transpose(self.components)
             other_temp_transpose=np.transpose(other.components)
-            cross_product=np.transpose(np.cross(self.components,other.components))
+            cross_product=np.transpose(np.cross(self_temp_transpose,other_temp_transpose))
             cross_object=Vector_Manager(cross_product, name_cross)
             Vector_Manager.object_saver(cross_object)
             return cross_object

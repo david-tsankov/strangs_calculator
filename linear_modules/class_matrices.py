@@ -29,7 +29,7 @@ class Matrix_Manager:
     def get_geterminant(self):
         if self.components.shape[0]==self.components.shape[1]:
             det=np.linalg.det(self.components)
-            return det
+            return round(det,2)
         else:
             return "Please enter a square matrix!"
         

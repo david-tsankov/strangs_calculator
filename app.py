@@ -36,7 +36,7 @@ def matrix_menu():
     print("\n")
     print(f"{"4 ---> Matrix multiplication":^33.33}{"5 ---> Get inverse":^33.33}{"6 ---> Get rank":^33.33}")
     print("\n")
-    print(f"{"7 ---> Get eigenvalues":^33.33}{"8 ---> $$$$":^33.33}{"9 ---> Back to main menu":^33.33}")
+    print(f"{"7 ---> Get eigenvalues":^33.33}{"8 ---> Check singularity":^33.33}{"9 ---> Back to main menu":^33.33}")
     print(f"{100*"-"}")
 
 def other_operations_menu():
@@ -241,7 +241,9 @@ def operation_input():
                 operation_4()
 
             if matrix_operation==8:
-                print("Incoming...")
+                name=input("Enter the variable representing the matrix (A,E,M): ")
+                matrix_object=Matrix_Manager.matrix_objects[name]
+                print(Matrix_Manager.check_singularity(matrix_object))
                 operation_4()
 
             if matrix_operation==9:
@@ -260,10 +262,10 @@ def operation_input():
             if other_operation==1:
                 name_vector=input("Enter the variable representing the vector (x,b,v): ")
                 name_matrix=input("Enter the variable representing the matrix (A,E,M): ")
-                name3=input("Enter the variable representing the solution (s,q,u): ")
+                name_solution=input("Enter the variable representing the solution (s,q,u): ")
                 vector_object=Vector_Manager.vector_objects[name_vector]
                 matrix_object=Matrix_Manager.matrix_objects[name_matrix]
-                solve_system_of_equations(matrix_object,vector_object)
+                print(solve_system_of_equations(matrix_object,vector_object,name_solution))
                 operation_5()
 
             if other_operation==2:
@@ -272,7 +274,7 @@ def operation_input():
                     operation_input()
                 except Exception:
                     print("Please enter a valid vector operation: ")
-        operation_input()
+        operation_5()
 
     elif operation==6:
         print("Thanks for using Strangs calculator")

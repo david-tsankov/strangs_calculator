@@ -36,14 +36,14 @@ class Matrix_Manager:
             return "Please enter a square matrix!"
         
     def get_inverse(self):
-        if np.linalg.det(self.components)==0:
+        if round(np.linalg.det(self.components),5)==0:
             return "Matrix is singular, no inverse!"
         else:
             inverse=np.linalg.inv(self.components)
             return inverse
         
     def check_singularity(self):
-        if round(np.linalg.det(self.components),2)==0:
+        if round(np.linalg.det(self.components),5)==0:
             return "Matrix is singular (det=0)"
         else:
             return "Matrix is not singular (det!=0)"

@@ -257,11 +257,11 @@ def operation_input():
     elif operation==5:
         other_operations_menu()
         def operation_5():
-            other_operation=int(input("Enter operation index: "))
+            other_operation=int(input("Enter other operation index: "))
 
             if other_operation==1:
-                name_vector=input("Enter the variable representing the vector (x,b,v): ")
                 name_matrix=input("Enter the variable representing the matrix (A,E,M): ")
+                name_vector=input("Enter the variable representing the vector (x,b,v): ")
                 name_solution=input("Enter the variable representing the solution (s,q,u): ")
                 vector_object=Vector_Manager.vector_objects[name_vector]
                 matrix_object=Matrix_Manager.matrix_objects[name_matrix]

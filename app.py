@@ -1,4 +1,4 @@
-# TODO: Break the big functioin into smaller functions
+# TODO: Film video on how to install program
 
 from linear_modules.class_matrices import Matrix_Manager
 from linear_modules.class_vectors import Vector_Manager
@@ -60,38 +60,30 @@ def syntax_editor_matrix(components):
     return numpy_array
 
 def operation_input():
-    try:
-        operation=int(input("Enter operation class: "))
-    except Exception:
-        print("Please enter a valid operation")
-        operation_input()
+    # try:
+    operation=int(input("Enter operation class: "))
+    # except Exception:
+    #     print("Please enter a valid operation")
+    #     operation_input()
     if operation==1:
-        try:
-            name=input("Enter a variable to represent the vector (x,b,v): ")
-            components=input("Enter the vector components, separated by a coma: ")
-            components=syntax_editor_vector(components)
-            vector_object=Vector_Manager(components,name)
-            Vector_Manager.vector_construct(vector_object)
-            Vector_Manager.object_saver(vector_object)
-            print(f"Succesfully created vector: {vector_object}")
-            operation_input()
-        except Exception:
-            print("Please enter a valid operation: ")
-            operation_input()
+        name=input("Enter a variable to represent the vector (x,b,v): ")
+        components=input("Enter the vector components, separated by a coma: ")
+        components=syntax_editor_vector(components)
+        vector_object=Vector_Manager(components,name)
+        Vector_Manager.vector_construct(vector_object)
+        Vector_Manager.object_saver(vector_object)
+        print(f"Succesfully created vector: {vector_object}")
+        operation_input()
 
     elif operation==2:
-        try:
-            name=input("Enter a variable to represent the matrix (A,E,M): ")
-            components=input("Enter the matrix components, separating the rows by a $,\nand the components of each row by a ',' e.g.(1,2,3$4,5,6$7,8,9): ")
-            components=syntax_editor_matrix(components)
-            matrix_object=Matrix_Manager(components,name)
-            Matrix_Manager.matrix_construct(matrix_object)
-            Matrix_Manager.matrix_object_saver(matrix_object)
-            print(f"Succesfully created matrix: {matrix_object}")
-            operation_input()
-        except Exception:
-            print("Please enter a valid operation: ")
-            operation_input()
+        name=input("Enter a variable to represent the matrix (A,E,M): ")
+        components=input("Enter the matrix components, separating the rows by a $,\nand the components of each row by a ',' e.g.(1,2,3$4,5,6$7,8,9): ")
+        components=syntax_editor_matrix(components)
+        matrix_object=Matrix_Manager(components,name)
+        Matrix_Manager.matrix_construct(matrix_object)
+        Matrix_Manager.matrix_object_saver(matrix_object)
+        print(f"Succesfully created matrix: {matrix_object}")
+        operation_input()
 
     elif operation==3:
         vector_menu()
@@ -188,7 +180,6 @@ def operation_input():
                     operation_input()
                 except Exception:
                     print("Please enter a valid vector operation: ")
-
         operation_3()
 
     elif operation==4:
@@ -201,13 +192,10 @@ def operation_input():
                 operation_4()
             
             if matrix_operation==2:
-                try:
-                    name=input("Enter the variable representing the vector (x,b,v): ")
-                    vector_object=Vector_Manager.vector_objects[name]
-                    print(f"Lenght = {Vector_Manager.get_lenght(vector_object)}")
-                except Exception:
-                    print("Please enter a valid variable")
-                operation_3()
+                name=input("Enter the variable representing the matrix (A,E,M): ")
+                matrix_object=Matrix_Manager.matrix_objects[name]
+                print(f"Determinant = {Matrix_Manager.get_geterminant(matrix_object)}")
+                operation_4()
 
             if matrix_operation==3:
                 try:
@@ -215,7 +203,7 @@ def operation_input():
                     vector_object=Vector_Manager.vector_objects[name]
                     vector_object=Vector_Manager.transpose(vector_object)
                     print(f"Transposed vector -->\n {vector_object}")
-                    operation_3()
+                    operation_4()
                 except Exception:
                     print("Please enter a valid variable")
 
@@ -226,7 +214,7 @@ def operation_input():
                     scalar=float(input("Please enter a scalar multiplier: "))
                     vector_object=Vector_Manager.scalar_multiplication(vector_object, scalar)
                     print(f"Scaled vector -->\n {vector_object}")
-                    operation_3()
+                    operation_4()
                 except Exception:
                     print("Please enter a valid variable")
 
@@ -241,7 +229,7 @@ def operation_input():
                     vector_object2=Vector_Manager.vector_objects[name2]
                     linear_combination=Vector_Manager.linear_combination(vector_object1, vector_object2, scalar1, scalar2, name_comb)
                     print(f"Linear combination -->\n {linear_combination}")
-                    operation_3()
+                    operation_4()
                 except Exception:
                     print("Please enter valid variables/scalars: ")
 
@@ -251,7 +239,7 @@ def operation_input():
                     vector_object=Vector_Manager.vector_objects[name]
                     vector_object=Vector_Manager.normalize(vector_object)
                     print(f"Normalized vector =\n{vector_object}")
-                    operation_3()
+                    operation_4()
                 except Exception:
                     print("Please enter a valid variable: ")
 
@@ -263,7 +251,7 @@ def operation_input():
                     vector_object2=Vector_Manager.vector_objects[name2]
                     dot_product=Vector_Manager.dot_product(vector_object1, vector_object2)
                     print(f"{dot_product}")
-                    operation_3()
+                    operation_4()
                 except Exception:
                     print("Please enter valid variables: ")
 
@@ -276,7 +264,7 @@ def operation_input():
                     vector_object2=Vector_Manager.vector_objects[name2]
                     cross_product=Vector_Manager.cross_product(vector_object1, vector_object2, name_cross)
                     print(f"Cross product = {cross_product}")
-                    operation_3()
+                    operation_4()
                 except Exception:
                     pass
 
@@ -287,9 +275,6 @@ def operation_input():
                 except Exception:
                     print("Please enter a valid vector operation: ")
         operation_4()
-
-          
-        operation_input()
 
     elif operation==5:
         print("Other operations")

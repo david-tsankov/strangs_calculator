@@ -23,31 +23,31 @@ class Matrix_Manager:
         return f"{self.name} =\n{self.components}"
     
     def matrix_multiplication(self, other: "Matrix_Manager"):
-        product=np.matmul(self.matrix, other.matrix)
+        product=np.matmul(self.components, other.components)
         return product
 
     def get_geterminant(self):
-        if self.matrix.shape[0]==self.matrix.shape[1]:
-            det=np.linalg.det(self.matrix)
+        if self.components.shape[0]==self.components.shape[1]:
+            det=np.linalg.det(self.components)
             return det
         else:
             return "Please enter a square matrix!"
         
     def get_inverse(self):
-        if np.linalg.det(self.matrix)==0:
+        if np.linalg.det(self.components)==0:
             return "Matrix is singular, no inverse!"
         else:
-            inverse=np.linalg.inv(self.matrix)
+            inverse=np.linalg.inv(self.components)
             return inverse
         
     def check_singularity(self):
-        if np.linalg.det(self.matrix)==0:
+        if np.linalg.det(self.components)==0:
             return "Matrix is singular (det=0)"
         else:
             return "Matrix is not singular (det!=0)"
         
     def get_rank(self):
-        rank=np.linalg.matrix_rank(self.matrix)
+        rank=np.linalg.matrix_rank(self.components)
         superscripts = {
             1: "\u00B9",
             2: "\u00B2",
@@ -63,7 +63,7 @@ class Matrix_Manager:
         return f"{rank}, or R{superscripts[rank]}"
     
     def get_eigenvalues(self):
-        eigen_tupple=np.linalg.eig(self.matrix)
+        eigen_tupple=np.linalg.eig(self.components)
         for index in range(len(eigen_tupple[0])):
             print(f"Eigenvalue: {eigen_tupple[0][index]}, Eigenvector: {eigen_tupple[1][index]}")
         return "Eigenvectors are horizontal in this functions output!"

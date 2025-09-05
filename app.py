@@ -2,6 +2,8 @@
 
 from linear_modules.class_matrices import Matrix_Manager
 from linear_modules.class_vectors import Vector_Manager
+from linear_modules.matrix_and_vector_functions import solve_system_of_equations
+
 def main_menu():
     print(f"{"Welcome to Strangs Calculator":^100}")
     print(f"{100*"-"}")
@@ -35,6 +37,13 @@ def matrix_menu():
     print(f"{"4 ---> Matrix multiplication":^33.33}{"5 ---> Get inverse":^33.33}{"6 ---> Get rank":^33.33}")
     print("\n")
     print(f"{"7 ---> Get eigenvalues":^33.33}{"8 ---> $$$$":^33.33}{"9 ---> Back to main menu":^33.33}")
+    print(f"{100*"-"}")
+
+def other_operations_menu():
+    print(f"{100*"-"}")
+    print(f"{"Other operations: ":^100}")
+    print(f"{100*"-"}")
+    print(f"{"1 ---> Solve system of equations":^50}{"2 ---> Back to main menu":^50}")
     print(f"{100*"-"}")
 
 def syntax_editor_vector(components):    
@@ -232,17 +241,8 @@ def operation_input():
                 operation_4()
 
             if matrix_operation==8:
-                try:
-                    name1=input("Enter the variable representing the first vector (x,b,v): ")
-                    name2=input("Enter the variable representing the second vector (x,b,v): ")
-                    name_cross=input("Enter a variable representing the cross product: ")
-                    vector_object1=Vector_Manager.vector_objects[name1]
-                    vector_object2=Vector_Manager.vector_objects[name2]
-                    cross_product=Vector_Manager.cross_product(vector_object1, vector_object2, name_cross)
-                    print(f"Cross product = {cross_product}")
-                    operation_4()
-                except Exception:
-                    pass
+                print("Incoming...")
+                operation_4()
 
             if matrix_operation==9:
                 try:
@@ -253,9 +253,27 @@ def operation_input():
         operation_4()
 
     elif operation==5:
-        print("Other operations")
-        Vector_Manager.list_vectors()
+        other_operations_menu()
+        def operation_5():
+            other_operation=int(input("Enter operation index: "))
+
+            if other_operation==1:
+                name_vector=input("Enter the variable representing the vector (x,b,v): ")
+                name_matrix=input("Enter the variable representing the matrix (A,E,M): ")
+                name3=input("Enter the variable representing the solution (s,q,u): ")
+                vector_object=Vector_Manager.vector_objects[name_vector]
+                matrix_object=Matrix_Manager.matrix_objects[name_matrix]
+                solve_system_of_equations(matrix_object,vector_object)
+                operation_5()
+
+            if other_operation==2:
+                try:
+                    main_menu()
+                    operation_input()
+                except Exception:
+                    print("Please enter a valid vector operation: ")
         operation_input()
+
     elif operation==6:
         print("Thanks for using Strangs calculator")
     else:

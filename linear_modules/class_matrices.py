@@ -43,7 +43,7 @@ class Matrix_Manager:
             return inverse
         
     def check_singularity(self):
-        if np.linalg.det(self.components)==0:
+        if round(np.linalg.det(self.components),2)==0:
             return "Matrix is singular (det=0)"
         else:
             return "Matrix is not singular (det!=0)"

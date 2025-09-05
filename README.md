@@ -27,3 +27,5 @@ For information on how to use the program check the documentation
 
 
 ## Below are videos showing how to install the calc step by step as written here:
+
+[installation_guide_strangs_calc.webm](https://github.com/user-attachments/assets/7d5689ea-a211-4b25-a9e1-2d436d90970e)

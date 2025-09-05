@@ -1,25 +1,26 @@
 import numpy as np
 
 class Matrix:
-    matrices={
+    matrix_objects={
 
     }
-    def __init__(self, matrix, name):
-        self.matrix=matrix
+    def __init__(self, components, name):
+        self.components=components
         self.name=name
     
     def matrix_construct(self):
-        self.matrix=np.array(self.matrix)
-        Matrix.matrices[self.name]=self.matrix.tolist()
+        self.components=np.array(self.components)
+
+    def matrix_object_saver(self):
+        Matrix.matrix_objects[self.name]=self
 
     def matrix_list():
-        for name, matrix in Matrix.matrices.items():
-            print(f"{name}")
-            for row in matrix:
-                print(f"{row}")
+        for name,object in Matrix.matrix_objects.items():
+            print(f"{object}")
+        return ""
     
     def __str__(self):
-        return f"{self.matrix}"
+        return f"{self.name} =\n{self.components}"
     
     def matrix_multiplication(self, other: "Matrix"):
         product=np.matmul(self.matrix, other.matrix)
@@ -88,7 +89,9 @@ class Matrix:
 if __name__=="__main__":
     M = Matrix([[-2,2,0],[-1,1,0],[3,0,1]],"M")
     N = Matrix([[2,3,4],[9,3,-2],[0,3,6]],"N")
-    M.matrix_construct()
-    N.matrix_construct()
+    Matrix.matrix_construct(M)
+    Matrix.matrix_object_saver(M)
+    Matrix.matrix_construct(N)
+    Matrix.matrix_object_saver(N)    
     Matrix.matrix_list()
     

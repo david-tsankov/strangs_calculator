@@ -2,8 +2,6 @@
 
 from linear_modules.class_matrices import Matrix
 from linear_modules.class_vectors import Vector_Manager
-# from linear_modules.matrix_and_vector_functions import solve_system_of_equations
-
 def main_menu():
     print(f"{"Welcome to Strangs Calculator":^100}")
     print(f"{100*"-"}")
@@ -147,6 +145,13 @@ def operation_input():
                     operation_3()
                 except Exception:
                     pass
+
+            if vector_operation==9:
+                try:
+                    main_menu()
+                    operation_input()
+                except Exception:
+                    print("Please enter a valid vector operation: ")
 
         operation_3()
 

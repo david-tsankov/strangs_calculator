@@ -60,11 +60,8 @@ def syntax_editor_matrix(components):
     return numpy_array
 
 def operation_input():
-    # try:
     operation=int(input("Enter operation class: "))
-    # except Exception:
-    #     print("Please enter a valid operation")
-    #     operation_input()
+
     if operation==1:
         name=input("Enter a variable to represent the vector (x,b,v): ")
         components=input("Enter the vector components, separated by a coma: ")
@@ -222,26 +219,17 @@ def operation_input():
                 operation_4()
 
             if matrix_operation==6:
-                try:
-                    name=input("Enter the variable representing the vector (x,b,v): ")
-                    vector_object=Vector_Manager.vector_objects[name]
-                    vector_object=Vector_Manager.normalize(vector_object)
-                    print(f"Normalized vector =\n{vector_object}")
-                    operation_4()
-                except Exception:
-                    print("Please enter a valid variable: ")
+                name=input("Enter the variable representing the matrix (A,E,M): ")
+                matrix_object=Matrix_Manager.matrix_objects[name]
+                rank=Matrix_Manager.get_rank(matrix_object)
+                print(f"Rank = {rank}")
+                operation_4()
 
             if matrix_operation==7:
-                try:
-                    name1=input("Enter the variable representing the first vector (x,b,v): ")
-                    name2=input("Enter the variable representing the second vector (x,b,v): ")
-                    vector_object1=Vector_Manager.vector_objects[name1]
-                    vector_object2=Vector_Manager.vector_objects[name2]
-                    dot_product=Vector_Manager.dot_product(vector_object1, vector_object2)
-                    print(f"{dot_product}")
-                    operation_4()
-                except Exception:
-                    print("Please enter valid variables: ")
+                name=input("Enter the variable representing the matrix (A,E,M): ")
+                matrix_object=Matrix_Manager.matrix_objects[name]
+                print(Matrix_Manager.get_eigenvalues(matrix_object))
+                operation_4()
 
             if matrix_operation==8:
                 try:

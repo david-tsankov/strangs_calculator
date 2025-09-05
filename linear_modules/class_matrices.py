@@ -67,8 +67,8 @@ class Matrix_Manager:
     def get_eigenvalues(self):
         eigen_tupple=np.linalg.eig(self.components)
         for index in range(len(eigen_tupple[0])):
-            print(f"Eigenvalue: {eigen_tupple[0][index]}, Eigenvector: {eigen_tupple[1][index]}")
-        return "Eigenvectors are horizontal in this functions output!"
+            print(f"Eigenvalue: {round(eigen_tupple[0][index],2)},\nEigenvector: \n{np.transpose(np.array([eigen_tupple[1][index]]))}\n")
+        return "Eigenvectors are not saved in the memory, if you wish to use one to compute, you must create it separately!"
     
     def get_cayley_hamilton_equation(self):
         pass
@@ -89,11 +89,12 @@ class Matrix_Manager:
     
 
 if __name__=="__main__":
-    M = Matrix_Manager([[-2,2,0],[-1,1,0],[3,0,1]],"M")
+    M = Matrix_Manager([[5,2,0],[2,5,0],[-3,4,6]],"M")
     N = Matrix_Manager([[2,3,4],[9,3,-2],[0,3,6]],"N")
     Matrix_Manager.matrix_construct(M)
     Matrix_Manager.matrix_object_saver(M)
     Matrix_Manager.matrix_construct(N)
     Matrix_Manager.matrix_object_saver(N)    
     Matrix_Manager.matrix_list()
+    print(Matrix_Manager.get_eigenvalues(M))
     

@@ -22,9 +22,11 @@ class Matrix_Manager:
     def __str__(self):
         return f"{self.name} =\n{self.components}"
     
-    def matrix_multiplication(self, other: "Matrix_Manager"):
+    def matrix_multiplication(self, other: "Matrix_Manager",name_product: str="Matrix Multiplication"):
         product=np.matmul(self.components, other.components)
-        return product
+        product_object=Matrix_Manager(product,name_product)
+        Matrix_Manager.matrix_object_saver(product_object)
+        return product_object
 
     def get_geterminant(self):
         if self.components.shape[0]==self.components.shape[1]:

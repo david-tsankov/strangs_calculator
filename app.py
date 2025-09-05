@@ -198,40 +198,28 @@ def operation_input():
                 operation_4()
 
             if matrix_operation==3:
-                try:
-                    name=input("Enter the variable representing the vector (x,b,v): ")
-                    vector_object=Vector_Manager.vector_objects[name]
-                    vector_object=Vector_Manager.transpose(vector_object)
-                    print(f"Transposed vector -->\n {vector_object}")
-                    operation_4()
-                except Exception:
-                    print("Please enter a valid variable")
+                print("Transpose function coming soon...")
+                operation_4()
 
             if matrix_operation==4:
-                try:
-                    name=input("Enter the variable representing the vector (x,b,v): ")
-                    vector_object=Vector_Manager.vector_objects[name]
-                    scalar=float(input("Please enter a scalar multiplier: "))
-                    vector_object=Vector_Manager.scalar_multiplication(vector_object, scalar)
-                    print(f"Scaled vector -->\n {vector_object}")
-                    operation_4()
-                except Exception:
-                    print("Please enter a valid variable")
+                name1=input("Enter the variable representing the first matrix (A,E,M): ")
+                name2=input("Enter the variable representing the second matrix (A,E,M): ")
+                name3=input("Enter the variable representing the matrix multiplication (A,E,M): ")
+                matrix_object1=Matrix_Manager.matrix_objects[name1]
+                matrix_object2=Matrix_Manager.matrix_objects[name2]
+                product=Matrix_Manager.matrix_multiplication(matrix_object1,matrix_object2,name3)
+                print(f"{product}")
+                operation_4()
 
             if matrix_operation==5:
-                try:
-                    name1=input("Enter the variable representing the first vector (x,b,v): ")
-                    scalar1=float(input("Enter the first scalar multiplier: "))
-                    name2=input("Enter the variable representing the second vector (x,b,v): ")
-                    scalar2=float(input("Enter the second scalar multiplier: "))
-                    name_comb=input("Enter a variable(s) to represent the combination: ")
-                    vector_object1=Vector_Manager.vector_objects[name1]
-                    vector_object2=Vector_Manager.vector_objects[name2]
-                    linear_combination=Vector_Manager.linear_combination(vector_object1, vector_object2, scalar1, scalar2, name_comb)
-                    print(f"Linear combination -->\n {linear_combination}")
-                    operation_4()
-                except Exception:
-                    print("Please enter valid variables/scalars: ")
+                name=input("Enter the variable representing the matrix (A,E,M): ")
+                matrix_object=Matrix_Manager.matrix_objects[name]
+                inverse=Matrix_Manager.get_inverse(matrix_object)
+                inverse_name=name + "\u207B\u00B9"
+                inverse_object=Matrix_Manager(inverse,inverse_name)
+                Matrix_Manager.matrix_object_saver(inverse_object)
+                print(f"{inverse_object}")
+                operation_4()
 
             if matrix_operation==6:
                 try:

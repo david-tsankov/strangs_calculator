@@ -15,3 +15,4 @@ superscripts = {
 
 
 print(f"R{superscripts[rank]}")
+print("M\u207B\u00B9")

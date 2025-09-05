@@ -9,3 +9,5 @@ e.g. M = [[1,2,3],[4,5,6],[7,8,9]], this represents a matrix of the form:  1 2 3
                                                                            4 5 6 ----> list 2
                                                                            7 8 9 ----> list 3
 You can also do this for n-columns and m-rows.
+
+To copy and paste from terminal when trying to use the name of an inverse matrix use SHIFT-CTRL-C and SHIFT-CTRL-V

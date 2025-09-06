@@ -28,7 +28,7 @@ For information on how to use the program check the documentation
 
 ## Below is a video showing how to install the calc step by step as written here:
 
-[Installation Guide](https://github.com/user-attachments/assets/7d5689ea-a211-4b25-a9e1-2d436d90970e)
+
 
 # Documentation
 
@@ -46,6 +46,6 @@ You can also do this for n-columns and m-rows.
 
 To copy and paste from terminal when trying to use the name of an inverse matrix use SHIFT-CTRL-C and SHIFT-CTRL-V
 ## Video showing how to run and use the calc
-[How to run and use the program](https://github.com/user-attachments/assets/8da72edd-ab65-4deb-993e-52fb1d286013)
+
 
 

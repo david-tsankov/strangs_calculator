@@ -26,8 +26,24 @@ After installing all the dependencies, and having activated your virtual environ
 For information on how to use the program check the documentation
 
 
-## Below are videos showing how to install the calc step by step as written here:
+## Below is a video showing how to install the calc step by step as written here:
 
 [Installation Guide](https://github.com/user-attachments/assets/7d5689ea-a211-4b25-a9e1-2d436d90970e)
 
-[sample_use.webm](https://github.com/user-attachments/assets/8da72edd-ab65-4deb-993e-52fb1d286013)
+# Documentation
+
+## Constructing a vector: When constructing a vector write the vector components seaprated by a coma
+e.g. A = 1,2,3, this represents the vector with components x=1, y=2, z=3.  
+You can do this for n dimensions  
+e.g. A = 1,2,3,....,n  
+
+## Constructing a matrix: When constructing a matrix write the components of each row separated by a coma and separate each row using a dollar sign ($)
+e.g. M = 1,2,3$4,5,6$7,8,9 this represents a matrix of the form:
+
+\left(\begin{array}{cc} 1 & 0\\ 0 & 1 \end{array}\right)
+
+You can also do this for n-columns and m-rows.
+
+To copy and paste from terminal when trying to use the name of an inverse matrix use SHIFT-CTRL-C and SHIFT-CTRL-V
+## Video showing how to run and use the calc
+[How to run and use the program](https://github.com/user-attachments/assets/8da72edd-ab65-4deb-993e-52fb1d286013)

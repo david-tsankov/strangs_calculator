@@ -46,8 +46,13 @@ $$
 7 & 8 & 9
 \end{bmatrix}
 $$
+
+```math
+\begin{bmatrix}X\\Y\end{bmatrix}
+```
 You can also do this for n-columns and m-rows.
 
 To copy and paste from terminal when trying to use the name of an inverse matrix use SHIFT-CTRL-C and SHIFT-CTRL-V
 ## Video showing how to run and use the calc
 [How to run and use the program](https://github.com/user-attachments/assets/8da72edd-ab65-4deb-993e-52fb1d286013)
+

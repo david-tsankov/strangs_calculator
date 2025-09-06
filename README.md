@@ -28,7 +28,7 @@ For information on how to use the program check the documentation
 
 ## Below is a video showing how to install the calc step by step as written here:
 
-
+[installation_guide_strangs_calc.webm](https://github.com/user-attachments/assets/2c172e27-4766-4505-af6e-63582e7cfd67)
 
 # Documentation
 
@@ -47,5 +47,4 @@ You can also do this for n-columns and m-rows.
 To copy and paste from terminal when trying to use the name of an inverse matrix use SHIFT-CTRL-C and SHIFT-CTRL-V
 ## Video showing how to run and use the calc
 
-
-
+[sample_use.webm](https://github.com/user-attachments/assets/36a8a478-51d7-4b26-b20d-6549a129ff6d)

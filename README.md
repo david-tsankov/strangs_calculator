@@ -40,7 +40,7 @@ e.g. A = 1,2,3,....,n
 ## Constructing a matrix: When constructing a matrix write the components of each row separated by a coma and separate each row using a dollar sign ($)
 e.g. M = 1,2,3$4,5,6$7,8,9 this represents a matrix of the form:
 
-\left(\begin{array}{cc} 1 & 0\\ 0 & 1 \end{array}\right)
+$\begin{bmatrix}1 &2 & 3\\4 & 5 & 6\\7 & 8 & 9 \end{bmatrix}$
 
 You can also do this for n-columns and m-rows.
 

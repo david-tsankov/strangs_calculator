@@ -30,4 +30,4 @@ For information on how to use the program check the documentation
 
 [Installation Guide](https://github.com/user-attachments/assets/7d5689ea-a211-4b25-a9e1-2d436d90970e)
 
-[How to run and use the calc](https://github.com/user-attachments/assets/f39d8bd7-f2ae-475c-9458-fd481e031000)
+[sample_use.webm](https://github.com/user-attachments/assets/8da72edd-ab65-4deb-993e-52fb1d286013)
